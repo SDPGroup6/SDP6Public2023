@@ -7,6 +7,9 @@ import time
 
 class MarkerPublisher:
 
+    """
+    Set default values for position of the TurtleBot
+    """
     def __init__(self) -> None:
         self.x = 0.0
         self.y = 0.0
@@ -32,9 +35,9 @@ class MarkerPublisher:
         rospy.Subscriber('/odom',Odometry,self.odom_callback) 
     
 
-    """
-    Sets and publishes coordinates for the region that the turtlebot should explore
-    """
+"""
+Sets and publishes coordinates for the region that the turtlebot should explore
+"""
 def publish_coordinates(x : float,y : float,z : float): 
         marker_pub = rospy.Publisher("/clicked_point",PointStamped, queue_size = 10000)
         while not rospy.is_shutdown():
@@ -62,9 +65,9 @@ if __name__ == '__main__':
     while publisher.x + publisher.y + publisher.z == 0:
         publisher.read_odom_data()
     publish_coordinates(publisher.x,publisher.y,publisher.z)
-    #publisher.publish_coordinates()
+    publisher.publish_coordinates()
 
-
+# EXAMPLE OF MARKER MESSAGE
 #     header: 
 #   seq: 1500494
 #   stamp: 
