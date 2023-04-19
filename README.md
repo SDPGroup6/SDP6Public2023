@@ -3,4 +3,4 @@ A public repo for sharing technical solutions.
 
 # Highlights: 
 
-`on_dice_master.py`, `PiMotorController.py`, `planning.py`
+`on_dice_master.py`, `PiMotorController.py`, `planning.py`, `on_bot_launch.py`
