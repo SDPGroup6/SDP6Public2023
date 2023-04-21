@@ -61,7 +61,7 @@ class SDP6Launcher():
         self.gomamon_ssh = paramiko.SSHClient()
         try:
             self.gomamon_ssh.connect(
-                hostname="gomamon", username="pi", password="r00t"
+                hostname="hostname", username="username", password="password"
             )
         except paramiko.SSHException:
             raise paramiko.SSHException("Gomamon Not Started.")
